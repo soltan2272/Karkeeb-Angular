@@ -8,13 +8,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductSearchComponent } from './product-search/product-search.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { CategoryProductsComponent } from './category-products/category-products.component';
+import { NotResultSearchComponent } from './not-result-search/not-result-search.component';
 
 
 const routs:Routes=[
   {path:"productdetails/:pid", component:ProductdetailsComponent},
   {path:"searchcategory/:catid", component:CategoryProductsComponent},
-  {path:"search/:category/:name", component:ProductSearchComponent},
+  {path:"search/:name/:category", component:ProductSearchComponent},
   {path:"search/:name", component:ProductSearchComponent},
+  {path:"notresult/:search", component:NotResultSearchComponent},
   // {path:"search/name/category/:name/:catid", component:ProductSearchComponent}
 ]
 
@@ -22,7 +24,8 @@ const routs:Routes=[
   declarations: [
     ProductdetailsComponent,
     ProductSearchComponent,
-    CategoryProductsComponent
+    CategoryProductsComponent,
+    NotResultSearchComponent
   ],
   imports: [
     CommonModule,

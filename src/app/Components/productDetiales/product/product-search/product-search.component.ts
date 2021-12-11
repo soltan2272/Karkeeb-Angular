@@ -18,25 +18,40 @@ export class ProductSearchComponent implements OnInit {
   constructor(private activerouter: ActivatedRoute,
     private searchservice: ProductSearchService,
     private router: Router) { }
-    
+
   ngOnInit(): void {
 
-    
-    this.activerouter.paramMap.subscribe(param =>{
+
+    this.activerouter.paramMap.subscribe(param => {
       this.searchcategory = Number(param.get('category'));
       this.name = String(param.get('name'));
-      this.searchservice.filterCategoryName(this.searchcategory,this.name).subscribe(res =>
-        {
+      if (this.searchcategory != 0) {
+
+      this.searchservice.filterCategoryName(this.searchcategory, this.name).subscribe( res => {
+
           this.resultsearch = res.data;
+          if (this.resultsearch.length == 0) {
+            this.router.navigate(['/products/notresult', this.name]);
+          }
+
+        })}
+        
+     else {
+            this.searchservice.filterSearchName(this.name).subscribe(res => {
+              
+
+                 this.resultsearch = res.data;
+                 debugger
+
+                   if (this.resultsearch.length == 0) {
+                    this.router.navigate(['/products/notresult', this.name]);
+          }
         })
+
+
+      }
     })
-    this.activerouter.paramMap.subscribe(param =>{
-      this.name = String(param.get('name'));
-      this.searchservice.filterSearchName(this.name).subscribe(res =>
-        {
-          this.resultsearch = res.data;
-        })
-    })
+
   }
 
 

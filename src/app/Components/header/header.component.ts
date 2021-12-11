@@ -24,15 +24,10 @@ categorylist:ICategory[]=[];
 
   searchproduct(search:any,category:any){
      search as ElementRef;
-     if(category! as number){
-      this.router.navigate(['/products/search/',search.value]);
-     }
+    if(search.value!="")
+      this.router.navigate(['/products/search/',search.value,category]);
 
-     else
-     {
-      this.router.navigate(['/products/search/',category,search.value]);
-
-     }
+     
     search.value="";
   }
  
