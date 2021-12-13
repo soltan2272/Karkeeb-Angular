@@ -6,5 +6,6 @@ export interface IndexProduct {
     name:string,
     rate:number,
     price:number,
+    description : string,
 
 }

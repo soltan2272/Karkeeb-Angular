@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductSearchComponent } from './product-search/product-search.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { CategoryProductsComponent } from './category-products/category-products.component';
+import { ShopComponent } from './shop/shop.component';
 
 
 const routs:Routes=[
@@ -22,7 +23,8 @@ const routs:Routes=[
   declarations: [
     ProductdetailsComponent,
     ProductSearchComponent,
-    CategoryProductsComponent
+    CategoryProductsComponent,
+    ShopComponent
   ],
   imports: [
     CommonModule,

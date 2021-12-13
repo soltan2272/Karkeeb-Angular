@@ -25,8 +25,6 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     HomeComponent,
     ProductsComponent,
     RatePipePipe,
-
-
     
     
   ],
