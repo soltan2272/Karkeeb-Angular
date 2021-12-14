@@ -16,6 +16,8 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RatePipePipe } from './filtersPipe/rate-pipe.pipe';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { ShoppingCartComponent } from './Components/shoppingCart/shopping-cart/shopping-cart.component';
+import { CartModule } from './Components/shoppingCart/cart/cart.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     HomeComponent,
     ProductsComponent,
     RatePipePipe,
+    ShoppingCartComponent,
     
     
   ],
@@ -33,6 +36,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     AppRoutingModule,
     FormsModule,
     ProductModule ,
+    CartModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
