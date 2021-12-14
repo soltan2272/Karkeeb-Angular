@@ -19,6 +19,9 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { AddProductComponent } from './Components/add-product/add-product.component';
 import { EditProductComponent } from './Components/edit-product/edit-product.component';
 import { ProductSerComponent } from './Components/product-ser/product-ser.component';
+import { ShoppingCartComponent } from './Components/shoppingCart/shopping-cart/shopping-cart.component';
+import { CartModule } from './Components/shoppingCart/cart/cart.module';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import { ProductSerComponent } from './Components/product-ser/product-ser.compon
     ProductSerComponent,
     AddProductComponent,
     EditProductComponent
+    ShoppingCartComponent,
+    
     
   ],
   imports: [
@@ -38,6 +43,7 @@ import { ProductSerComponent } from './Components/product-ser/product-ser.compon
     AppRoutingModule,
     FormsModule,
     ProductModule ,
+    CartModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,

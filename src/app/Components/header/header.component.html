@@ -43,7 +43,7 @@
                 <div class="col-lg-7 col-md-7">
                     <div class="advanced-search">
                         <select class=" category" name="All Categories"#selectedcategory >
-                                <option class=" " value="allcategory">Categories</option>
+                                <option class=" " value='0'>Categories</option>
                                 <option class=" " *ngFor="let item of categorylist"  value="{{item.id}}" >{{item.name}}</option>
 
 
@@ -58,12 +58,18 @@
                 <div class="col-lg-3 text-right col-md-3">
                     <ul class="nav-right">
                         <li class="heart-icon">
-                            <a href="#">
+                            <a [routerLink]="['/products/watchlist']" >
                                 <i class="icon_heart_alt"></i>
-                                <span>1</span>
+                                <span>{{watchlistnumber}}</span>
                             </a>
                         </li>
                         <li class="cart-icon">
+                            <a [routerLink]="['/shoppingcart']" >
+                                <i class="icon_bag_alt"></i>
+                                <span>{{cartnumber}}</span>
+                            </a>
+                        </li>
+                        <!-- <li class="cart-icon">
                             <a href="#">
                                 <i class="icon_bag_alt"></i>
                                 <span>3</span>
@@ -108,8 +114,8 @@
                                     <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
                                 </div>
                             </div>
-                        </li>
-                        <li class="cart-price">$150.00</li>
+                        </li> -->
+                        <li class="cart-price">{{totalPrice}} LE</li>
                     </ul>
                 </div>
             </div>
@@ -133,7 +139,7 @@
             <nav class="nav-menu mobile-menu">
                 <ul>
                     <li><a [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a></li>
-                    <li><a href="#">Shop</a></li>
+                    <li><a [routerLink]="['/products/shop']" routerLinkActive="router-link-active">Shop</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">Pages</a>
