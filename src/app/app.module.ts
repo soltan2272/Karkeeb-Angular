@@ -33,7 +33,7 @@ import { CartModule } from './Components/shoppingCart/cart/cart.module';
     RatePipePipe,
     ProductSerComponent,
     AddProductComponent,
-    EditProductComponent
+    EditProductComponent,
     ShoppingCartComponent,
     
     
