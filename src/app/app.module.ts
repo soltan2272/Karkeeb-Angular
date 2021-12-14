@@ -16,8 +16,12 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RatePipePipe } from './filtersPipe/rate-pipe.pipe';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { AddProductComponent } from './Components/add-product/add-product.component';
+import { EditProductComponent } from './Components/edit-product/edit-product.component';
+import { ProductSerComponent } from './Components/product-ser/product-ser.component';
 import { ShoppingCartComponent } from './Components/shoppingCart/shopping-cart/shopping-cart.component';
 import { CartModule } from './Components/shoppingCart/cart/cart.module';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +31,9 @@ import { CartModule } from './Components/shoppingCart/cart/cart.module';
     HomeComponent,
     ProductsComponent,
     RatePipePipe,
+    ProductSerComponent,
+    AddProductComponent,
+    EditProductComponent
     ShoppingCartComponent,
     
     
