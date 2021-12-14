@@ -7,9 +7,11 @@ import { ShopComponent } from './Components/productDetiales/product/shop/shop.co
 const routes: Routes = [
   {path:"" , redirectTo : '/home', pathMatch : 'full'},
   {path:"home" , component:HomeComponent},
-  {path:"shop" , component:ShopComponent},
   {path:"products" , 
   loadChildren : ()=> import ('src/app/Components/productDetiales/product/product.module').then(m=> m.ProductModule)},
+  {path:"shoppingcart" , 
+  loadChildren : ()=> import ('src/app/Components/shoppingCart/cart/cart.module').then(m=> m.CartModule)},
+  
 ];
 
 @NgModule({

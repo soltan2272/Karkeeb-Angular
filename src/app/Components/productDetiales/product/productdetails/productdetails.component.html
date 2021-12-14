@@ -28,12 +28,11 @@
                                     <b>{{product?.price | currency : 'LE'}}</b>
                                 </div>
 
-                                <form action="" class="cart mb-5">
+                                <div action="" class="cart mb-5">
                                     <div class="quantity">
-                                        <input type="number"class="form-control me-2" value="1"name="quantity" min="1" style="width: 5vw;float: left;">
-                                        <button class="btn btn-primary" type="submit">Add to cart</button>
+                                        <button class="btn btn-primary" (click)="addcart(product)" >Add to cart</button>
                                     </div>
-                                </form>
+                                </div>
 
                                         <ul class="nav nav-tabs">
                                             <li class="nav-item">

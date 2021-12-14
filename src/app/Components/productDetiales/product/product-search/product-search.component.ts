@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from 'src/app/Services/cart/cart.service';
 import { ProductSearchService } from 'src/app/Services/productSearchService/product-search.service';
+import { WatchListService } from 'src/app/Services/watchList/WatchListService';
 import { IndexProduct } from 'src/app/ViewModels/index-product';
 
 @Component({
@@ -17,6 +19,8 @@ export class ProductSearchComponent implements OnInit {
 
   constructor(private activerouter: ActivatedRoute,
     private searchservice: ProductSearchService,
+    private watch:WatchListService,
+    private cart:CartService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -54,7 +58,14 @@ export class ProductSearchComponent implements OnInit {
 
   }
 
-
+  AddWatch(p:any){ 
+    
+    this.watch.addtoWatchList(p);
+  }
+  addcart(p:any){ 
+    
+    this.cart.addtoCart(p);
+  }
 
   getproductditails(id: number) {
     this.router.navigate(['/products/productdetails', id]);

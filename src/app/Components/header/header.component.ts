@@ -1,6 +1,8 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/Services/cart/cart.service';
 import { CategoryService } from 'src/app/Services/CategoryService/category.service';
+import { WatchListService } from 'src/app/Services/watchList/WatchListService';
 import { ICategory } from 'src/app/ViewModels/Category/i-category';
 
 @Component({
@@ -9,30 +11,45 @@ import { ICategory } from 'src/app/ViewModels/Category/i-category';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-categorylist:ICategory[]=[];
-  constructor(private router:Router,
-              private category:CategoryService) { }
+  categorylist: ICategory[] = [];
+  watchlistnumber!: number;
+  cartnumber!: number;
+  totalPrice!: number;
+  constructor(private router: Router,
+    private category: CategoryService,
+    private watch: WatchListService,
+    private cart: CartService) { }
 
   ngOnInit(): void {
-    this.category.getcateory().subscribe(response=>
-      {
-        this.categorylist=response.data;
-      })
+    this.category.getcateory().subscribe(response => {
+      this.categorylist = response.data;
+    })
+    this.watch.getcount().subscribe(res =>
+      this.watchlistnumber = res);
+
+    this.cart.getcount().subscribe(res =>
+      this.cartnumber = res);
+
+    this.cart.getTotalPrice().subscribe(res =>
+      this.totalPrice = res);
+
 
   }
-  
 
-  searchproduct(search:any,category:any){
-     search as ElementRef;
-    if(search.value!="")
-      this.router.navigate(['/products/search/',search.value,category]);
 
-     
-    search.value="";
+  searchproduct(search: any, category: any) {
+    search as ElementRef;
+    if (search.value != "")
+      this.router.navigate(['/products/search/', search.value, category]);
+
+
+    search.value = "";
   }
- 
-  gocategory(id:number){
-    this.router.navigate(['/products/searchcategory',id]);
+
+  gocategory(id: number) {
+    this.router.navigate(['/products/searchcategory', id]);
 
   }
+
+
 }

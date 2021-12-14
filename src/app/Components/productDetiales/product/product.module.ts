@@ -12,6 +12,7 @@ import { CategoryProductsComponent } from './category-products/category-products
 import { ShopComponent } from './shop/shop.component';
 
 import { NotResultSearchComponent } from './not-result-search/not-result-search.component';
+import { WatchListComponent } from './watch-list/watch-list.component';
 
 
 
@@ -21,6 +22,9 @@ const routs:Routes=[
   {path:"search/:name/:category", component:ProductSearchComponent},
   {path:"search/:name", component:ProductSearchComponent},
   {path:"notresult/:search", component:NotResultSearchComponent},
+  {path:"shop" , component:ShopComponent},
+  {path:"watchlist", component:WatchListComponent},
+
   // {path:"search/name/category/:name/:catid", component:ProductSearchComponent}
 ]
 
@@ -29,11 +33,9 @@ const routs:Routes=[
     ProductdetailsComponent,
     ProductSearchComponent,
     CategoryProductsComponent,
-
-    ShopComponent
-
-    NotResultSearchComponent
-
+    ShopComponent,
+    NotResultSearchComponent,
+    WatchListComponent
   ],
   imports: [
     CommonModule,

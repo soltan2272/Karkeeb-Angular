@@ -15,7 +15,7 @@ export class NotResultSearchComponent implements OnInit {
   ngOnInit(): void {
 
     this.activerouter.paramMap.subscribe(param=>{
-      this.searchtxt = String(param.get('search'));
+      this.searchtxt = String(param.get('search'))
 
     })
   }
