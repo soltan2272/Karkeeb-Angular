@@ -12,7 +12,7 @@ export class ProductService {
   constructor(private http:HttpClient) { }
 
   getAllProducts():Observable<ResultViewModel>{
-    return this.http.get<ResultViewModel>(`${environment.ApiUrl}product/userProducts`)
+    return this.http.get<ResultViewModel>(`${environment.ApiUrl}product/userProducts`) 
    }
 
   //  getProductsByCategoryID(catID:number):Observable<IproductApi[]>{
