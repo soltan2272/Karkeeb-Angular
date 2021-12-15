@@ -21,6 +21,7 @@ import { EditProductComponent } from './Components/edit-product/edit-product.com
 import { ProductSerComponent } from './Components/product-ser/product-ser.component';
 import { ShoppingCartComponent } from './Components/shoppingCart/shopping-cart/shopping-cart.component';
 import { CartModule } from './Components/shoppingCart/cart/cart.module';
+import { UserModuleModule } from './Components/User/model/user-module/user-module.module';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { CartModule } from './Components/shoppingCart/cart/cart.module';
     ShoppingCartComponent,
     
     
+    
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { CartModule } from './Components/shoppingCart/cart/cart.module';
     Ng2SearchPipeModule,
     Ng2OrderModule,
     NgxPaginationModule,
-    LazyLoadImageModule
+    LazyLoadImageModule,
+    UserModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

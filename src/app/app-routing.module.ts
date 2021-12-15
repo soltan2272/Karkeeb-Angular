@@ -15,6 +15,8 @@ const routes: Routes = [
   {path:"editProduct" , component:EditProductComponent},
   {path:"products" , 
   loadChildren : ()=> import ('src/app/Components/productDetiales/product/product.module').then(m=> m.ProductModule)},
+  {path:"user" , 
+  loadChildren : ()=> import ('src/app/Components/User/model/user-module/user-module.module').then(m=>m.UserModuleModule )},
   {path:"shoppingcart" , 
   loadChildren : ()=> import ('src/app/Components/shoppingCart/cart/cart.module').then(m=> m.CartModule)},
   
