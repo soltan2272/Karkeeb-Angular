@@ -18,6 +18,7 @@ import { RatePipePipe } from './filtersPipe/rate-pipe.pipe';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ShoppingCartComponent } from './Components/shoppingCart/shopping-cart/shopping-cart.component';
 import { CartModule } from './Components/shoppingCart/cart/cart.module';
+import { UserModuleModule } from './Components/User/model/user-module/user-module.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CartModule } from './Components/shoppingCart/cart/cart.module';
     ProductsComponent,
     RatePipePipe,
     ShoppingCartComponent,
+    
     
     
   ],
@@ -43,7 +45,8 @@ import { CartModule } from './Components/shoppingCart/cart/cart.module';
     Ng2SearchPipeModule,
     Ng2OrderModule,
     NgxPaginationModule,
-    LazyLoadImageModule
+    LazyLoadImageModule,
+    UserModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
