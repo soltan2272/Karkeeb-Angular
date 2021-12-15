@@ -11,8 +11,16 @@ import { environment } from 'src/environments/environment';
 export class LoginService {
 
   isUserlogged:BehaviorSubject<boolean>
+  userToken:BehaviorSubject<string>
+  userID:BehaviorSubject<number>
+  userRoles:BehaviorSubject<string[]>
   constructor(private httpservice:HttpClient) {
   this.isUserlogged=new BehaviorSubject<boolean>(false);
+  this.userToken=new BehaviorSubject<string>("");
+  this.userID=new BehaviorSubject<number>(0);
+  this.userRoles=new BehaviorSubject<string[]>([]);
+  this.userToken=new BehaviorSubject<string>("");
+  
    }
 
   login(loginModel:LoginModel):Observable<AuthModel>
@@ -26,6 +34,9 @@ export class LoginService {
              .subscribe({
                next:(res)=>{
                 this.isUserlogged.next(res.isAuthenticated);
+                this.userID.next(res.user_ID);
+                this.userToken.next(res.token);
+                this.userRoles.next(res.Roles);
                 console.log(this.isUserlogged.value);
                }
              })

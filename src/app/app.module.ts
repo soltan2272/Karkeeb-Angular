@@ -22,6 +22,7 @@ import { ProductSerComponent } from './Components/product-ser/product-ser.compon
 import { ShoppingCartComponent } from './Components/shoppingCart/shopping-cart/shopping-cart.component';
 import { CartModule } from './Components/shoppingCart/cart/cart.module';
 import { UserModuleModule } from './Components/User/model/user-module/user-module.module';
+import { PaymentComponent } from './Components/payment/payment.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { UserModuleModule } from './Components/User/model/user-module/user-modul
     AddProductComponent,
     EditProductComponent,
     ShoppingCartComponent,
+    PaymentComponent,
     
     
     
