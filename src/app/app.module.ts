@@ -19,6 +19,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ShoppingCartComponent } from './Components/shoppingCart/shopping-cart/shopping-cart.component';
 import { CartModule } from './Components/shoppingCart/cart/cart.module';
 import { UserModuleModule } from './Components/User/model/user-module/user-module.module';
+import { PaymentComponent } from './Components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { UserModuleModule } from './Components/User/model/user-module/user-modul
     ProductsComponent,
     RatePipePipe,
     ShoppingCartComponent,
+    PaymentComponent,
     
     
     
