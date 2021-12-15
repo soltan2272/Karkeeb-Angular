@@ -11,7 +11,8 @@ export class ProductService {
 
   constructor(private http:HttpClient) { }
 
-  getAllProducts():Observable<ResultViewModel>{
+  getAllProducts():Observable<ResultViewModel>
+  {
     return this.http.get<ResultViewModel>(`${environment.ApiUrl}product/AdminProducts`)
    }
 
