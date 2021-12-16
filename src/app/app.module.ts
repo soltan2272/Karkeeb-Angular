@@ -23,6 +23,7 @@ import { ShoppingCartComponent } from './Components/shoppingCart/shopping-cart/s
 import { CartModule } from './Components/shoppingCart/cart/cart.module';
 import { UserModuleModule } from './Components/User/model/user-module/user-module.module';
 import { PaymentComponent } from './Components/payment/payment.component';
+import { PaypalComponent } from './Components/paypal/paypal.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { PaymentComponent } from './Components/payment/payment.component';
     EditProductComponent,
     ShoppingCartComponent,
     PaymentComponent,
+    PaypalComponent,
     
     
     

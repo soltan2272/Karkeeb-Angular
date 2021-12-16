@@ -66,6 +66,12 @@ calcTotal(qun:any,price:NumberSymbol,i:number){
 
   }
 
+  checkout(){
+
+    this.route.navigate(['/payment']);
+    this.cart.setTotalPricepayment(this.totalprice);
+
+  }
   
 }
 

@@ -90,7 +90,7 @@
                     <div class="summary-item"><span class="text">Price Befor Taxs</span><span class="price">{{totalprice}} LE</span></div>
                     <div class="summary-item"><span class="text">Tax</span><span class="price">14%</span></div>
                     <div class="summary-item"><span class="text">Total Price</span><span class="price">{{totalprice+.14*totalprice}}</span></div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Checkout</button>
+                    <button type="button" [routerLink]="['/payment']" (click)="checkout()"  class="btn btn-primary btn-lg btn-block">Checkout</button>
                     <button (click)="emptyCart()" type="button" class="btn btn-danger btn-lg btn-block">Clear Cart</button>
 
                 </div>
