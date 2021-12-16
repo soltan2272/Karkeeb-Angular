@@ -13,6 +13,7 @@ export class CartService {
    numberProducts=new BehaviorSubject<number>(0);
    count:number=0;
    totalPrice=new BehaviorSubject<number>(0);
+   totalPriceperPayment=new BehaviorSubject<number>(0);
    prices:number=0;
    
   constructor() { }
@@ -55,7 +56,8 @@ export class CartService {
     this.cartListItem=[];
     this.productList.next(this.cartListItem);
     this.numberProducts.next(0);
-
+    this.totalPrice.next(0);
+    this.totalPriceperPayment.next(0);
   }
   getcount(){
     return this.numberProducts.asObservable()
@@ -69,5 +71,14 @@ export class CartService {
     this.totalPrice.next(this.prices);
 
     return this.totalPrice.asObservable();
+  }
+
+
+  setTotalPricepayment(price:number){
+    this.totalPriceperPayment.next(price);
+  }
+  getTotalPricepayment(){
+
+    return this.totalPriceperPayment.asObservable();
   }
 }

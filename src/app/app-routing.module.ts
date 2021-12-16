@@ -5,6 +5,7 @@ import { EditProductComponent } from './Components/edit-product/edit-product.com
 import { HomeComponent } from './Components/home/home.component';
 
 import { PaymentComponent } from './Components/payment/payment.component';
+import { PaypalComponent } from './Components/paypal/paypal.component';
 
 import { ProductSerComponent } from './Components/product-ser/product-ser.component';
 
@@ -15,7 +16,7 @@ const routes: Routes = [
   {path:"" , redirectTo : '/home', pathMatch : 'full'},
 
   {path:"home" , component:HomeComponent},
-  {path:"payment" , component:PaymentComponent},
+  {path:"payment" , component:PaypalComponent},
   {path:"home" , component:ProductSerComponent},
   {path:"addProduct" , component:AddProductComponent},
   {path:"editProduct" , component:EditProductComponent},
