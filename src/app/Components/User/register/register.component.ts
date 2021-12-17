@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { RegisterService } from 'src/app/Services/User/register.service';
 import { AuthModel } from 'src/app/ViewModels/User/auth-model';
 import { RegisterModel } from 'src/app/ViewModels/User/register-model';
@@ -16,7 +17,7 @@ export class RegisterComponent implements OnInit {
   authModel:AuthModel={} as AuthModel;
   Message:string="";
   public isLogged:boolean=false;
-  constructor(private fb: FormBuilder,private registerService:RegisterService) { }
+  constructor(private fb: FormBuilder,private registerService:RegisterService,private traslate:TranslateService) { }
 
   ngOnInit(): void {
     this.registerform = this.fb.group({
@@ -29,10 +30,19 @@ export class RegisterComponent implements OnInit {
       date_birth:['',Validators.required],
       isSeller:[]
   });
-  //this.traslate.setDefaultLang("English");
+  this.traslate.setDefaultLang("en");
   
 }
 
+changeLanguage(e:any)
+{
+  console.log(e.target.value);
+  this.traslate.setDefaultLang(e.target.value);
+}
+onLangChange()
+{
+  this.traslate.onLangChange.subscribe((res)=>console.log(res))
+}
   onSubmit()
   {
     //alert("jjj");
