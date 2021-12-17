@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddProductComponent } from './Components/add-product/add-product.component';
 import { EditProductComponent } from './Components/edit-product/edit-product.component';
 import { HomeComponent } from './Components/home/home.component';
-import { OfferComponent } from './Components/offer/offer.component';
+// import { OfferComponent } from './Components/offer/offer.component';
 import { OfferModule } from './Components/offer/offer/offer.module';
 
 import { PaymentComponent } from './Components/payment/payment.component';
@@ -27,8 +27,8 @@ const routes: Routes = [
   {path:"shoppingcart" , 
   loadChildren : ()=> import ('src/app/Components/shoppingCart/cart/cart.module').then(m=> m.CartModule)},
   
-  {path:"offer" , 
-  loadChildren : ()=> import ('src/app/Components/offer/offer.module').then(m=> m.OfferModule)},
+  // {path:"offer" , 
+  // loadChildren : ()=> import ('src/app/Components/offer/offer.module').then(m=> m.OfferModule)},
  
 ];
 
