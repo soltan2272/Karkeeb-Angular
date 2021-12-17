@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Discount Percentage</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let off of offer">
+            <td>{{off.start_date}}</td>
+            <td>{{off.end_date}}</td>
+            <td>{{off.discount_percentage}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="text-end m-3">
+    <a class="btn btn-primary" href="#" role="button" (click)="AddOffer()">Add Offer</a>
+</div>

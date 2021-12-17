@@ -13,6 +13,11 @@ export class ProductdetailsComponent implements OnInit {
 
   productid: number=0;
   product:IndexProduct | undefined;
+
+  Details:boolean=true;
+  Feedback:boolean=false;
+  isRated = false;
+
   constructor(private ActRouter : ActivatedRoute ,
               private router:Router , private ProService : ProductService,
               private cart:CartService) { }
@@ -31,4 +36,16 @@ export class ProductdetailsComponent implements OnInit {
   addcart(p:any){ 
     this.cart.addtoCart(p);
   }
+
+  toggleDetailsFeedback()
+  {
+    this.Details=!this.Details;
+    this.Feedback=!this.Feedback;
+  }
+
+  ChangeRating()
+  {
+    this.isRated = !this.isRated;
+  }
+  
 }

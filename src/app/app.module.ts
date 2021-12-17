@@ -24,6 +24,7 @@ import { CartModule } from './Components/shoppingCart/cart/cart.module';
 import { UserModuleModule } from './Components/User/model/user-module/user-module.module';
 import { PaymentComponent } from './Components/payment/payment.component';
 import { PaypalComponent } from './Components/paypal/paypal.component';
+import { AddofferComponent } from './Components/offer/addoffer/addoffer.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { PaypalComponent } from './Components/paypal/paypal.component';
     ShoppingCartComponent,
     PaymentComponent,
     PaypalComponent,
+    AddofferComponent,
     
     
     
