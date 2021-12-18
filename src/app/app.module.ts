@@ -16,17 +16,22 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RatePipePipe } from './filtersPipe/rate-pipe.pipe';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { AddProductComponent } from './Components/add-product/add-product.component';
+import { EditProductComponent } from './Components/edit-product/edit-product.component';
+import { ProductSerComponent } from './Components/product-ser/product-ser.component';
 import { ShoppingCartComponent } from './Components/shoppingCart/shopping-cart/shopping-cart.component';
 import { CartModule } from './Components/shoppingCart/cart/cart.module';
 import { UserModuleModule } from './Components/User/model/user-module/user-module.module';
 import { PaymentComponent } from './Components/payment/payment.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule,TranslateLoader } from '@ngx-translate/core';
+import { PaypalComponent } from './Components/paypal/paypal.component';
 
 export function createTranslateLoader(http:HttpClient)
 {
   return new TranslateHttpLoader(http,'./assets/i18n/','.json');
 }
+
 
 @NgModule({
   declarations: [
@@ -36,9 +41,13 @@ export function createTranslateLoader(http:HttpClient)
     HomeComponent,
     ProductsComponent,
     RatePipePipe,
+    ProductSerComponent,
+    AddProductComponent,
+    EditProductComponent,
     ShoppingCartComponent,
     PaymentComponent,
- 
+    PaypalComponent
+    
     
     
   ],
