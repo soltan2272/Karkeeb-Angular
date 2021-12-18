@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { LoginService } from 'src/app/Services/User/login.service';
 import { AuthModel } from 'src/app/ViewModels/User/auth-model';
 import { LoginModel } from 'src/app/ViewModels/User/login-model';
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   authModel:AuthModel={} as AuthModel;
   Message:string="";
   public isLogged:boolean=false;
-  constructor(private fb: FormBuilder,private loginService:LoginService) { }
+  constructor(private fb: FormBuilder,private loginService:LoginService,private traslate:TranslateService) { }
 
   ngOnInit(): void {
     this.loginform = this.fb.group({
@@ -25,19 +26,19 @@ export class LoginComponent implements OnInit {
       Password: ['', [Validators.required,Validators.pattern(".{6,}")]]
     
   });
- // this.traslate.setDefaultLang("English");
+  this.traslate.setDefaultLang("en");
   
 }
 
-/*changeLanguage(e:any)
+changeLanguage(e:any)
 {
-  
+  console.log(e.target.value);
   this.traslate.setDefaultLang(e.target.value);
 }
 onLangChange()
 {
   this.traslate.onLangChange.subscribe((res)=>console.log(res))
-}*/
+}
   onSubmit()
   {
     //alert("jjj");

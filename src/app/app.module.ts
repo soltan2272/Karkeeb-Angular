@@ -8,7 +8,7 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { HomeComponent } from './Components/home/home.component';
 import { ProductsComponent } from './Components/home/products/products.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductModule } from './Components/productDetiales/product/product.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -23,7 +23,14 @@ import { ShoppingCartComponent } from './Components/shoppingCart/shopping-cart/s
 import { CartModule } from './Components/shoppingCart/cart/cart.module';
 import { UserModuleModule } from './Components/User/model/user-module/user-module.module';
 import { PaymentComponent } from './Components/payment/payment.component';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule,TranslateLoader } from '@ngx-translate/core';
 import { PaypalComponent } from './Components/paypal/paypal.component';
+
+export function createTranslateLoader(http:HttpClient)
+{
+  return new TranslateHttpLoader(http,'./assets/i18n/','.json');
+}
 
 
 @NgModule({
@@ -39,7 +46,7 @@ import { PaypalComponent } from './Components/paypal/paypal.component';
     EditProductComponent,
     ShoppingCartComponent,
     PaymentComponent,
-    PaypalComponent,
+    PaypalComponent
     
     
     
@@ -57,7 +64,15 @@ import { PaypalComponent } from './Components/paypal/paypal.component';
     Ng2OrderModule,
     NgxPaginationModule,
     LazyLoadImageModule,
-    UserModuleModule
+    UserModuleModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory:(createTranslateLoader),
+          deps: [HttpClient]
+      },
+      defaultLanguage:'ar'
+  })
   ],
   providers: [],
   bootstrap: [AppComponent]
